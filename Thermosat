@@ -1,0 +1,16 @@
+module top_module (
+    input too_cold,
+    input too_hot,
+    input mode,
+    input fan_on,
+    output heater,
+    output aircon,
+    output fan
+); 
+    wire a,b;
+    assign a = (mode==1 && too_cold)?1:0;
+    assign b = (mode==0 && too_hot)?1:0;
+    assign fan = (fan_on || b||a)?1:0;
+    assign heater = a;
+    assign aircon = b;
+endmodule
