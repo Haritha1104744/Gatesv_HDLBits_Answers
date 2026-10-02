@@ -1,0 +1,20 @@
+module top_module (input x, input y, output z);
+    wire o1,o2,o3,o4;
+    a h1 (x,y,o1);
+    b h2 (x,y,o2);
+    a h3 (x,y,o3);
+    b h4 (x,y,o4);
+    
+  wire r ,i;
+    assign r = o1|o2;
+    assign i = o3&o4;
+    assign z = r^i;
+endmodule
+
+module a (input x,y, output z);
+    assign z = (x^y)&x;
+endmodule
+
+module b(input x,y, output z);
+    assign z = ~(x^y);
+endmodule
