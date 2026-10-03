@@ -1,0 +1,11 @@
+module top_module (
+    input clk,
+    input in, 
+    output out);
+    wire temp, temp1;
+    always@(posedge clk) begin 
+        temp1<=temp;
+        out<=temp;
+    end
+    assign temp = in^temp1;
+endmodule
