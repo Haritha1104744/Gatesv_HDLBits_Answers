@@ -1,0 +1,21 @@
+module top_module (
+    input clk,
+    input x,
+    output z
+); 
+    wire d,e,f;
+    reg b,c,g=0,h=0,i=0;
+    
+    assign d=g^x;
+    assign e=b&x;
+    assign f=x|c;
+    assign z=~(g|h|i);
+    always@(posedge clk) begin 
+        g<=d;
+        h<=e;
+        b<=~e;
+        i<=f;
+        c<=~f;
+    end
+
+endmodule
