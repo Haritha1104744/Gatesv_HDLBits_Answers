@@ -1,0 +1,13 @@
+module top_module (
+    input clk,
+    input w, R, E, L,
+    output Q
+);
+    wire temp,t,t1;
+    assign t = (E)?w:temp;
+    assign t1 = (L)?R:t;
+    always@(posedge clk) begin 
+        Q<=t1;
+        temp <=t1;
+    end
+endmodule
