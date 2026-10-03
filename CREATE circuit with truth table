@@ -1,0 +1,13 @@
+module top_module (
+    input clk,
+    input j,
+    input k,
+    output Q); 
+reg d;
+wire temp;
+    assign d=(j&~temp)|(~k&temp);
+    always@(posedge clk) begin 
+        Q<=d;
+        temp<=d;
+    end
+endmodule
